@@ -1,0 +1,6 @@
+team_member_id,team_member_name,role_title,is_lead,shift,location,active_status
+TM101,Rajesh Sharma,Team Lead,1,General (09:00 - 18:00),Noida,Active
+TM102,Priya Nair,Senior Security Analyst,0,Morning (06:30 - 15:30),Noida,Active
+TM103,Amit Verma,Security Analyst,0,Afternoon (14:30 - 23:30),Bangalore,Active
+TM104,Sneha Kulkarni,Security Analyst,0,Morning (06:30 - 15:30),Noida,Active
+TM105,Vikas Patel,Associate Analyst,0,Night (22:30 - 07:30),Bangalore,Active

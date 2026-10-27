@@ -1,0 +1,6 @@
+bu_id,bu_name,region,cost_center
+BU01,Global Finance & Accounting,Global,CC-FIN-100
+BU02,Supply Chain & Logistics,EMEA,CC-SCM-200
+BU03,Sales & Commercial Operations,Americas,CC-SALES-300
+BU04,Human Resources & Payroll,APAC,CC-HR-400
+BU05,Information Technology Operations,Global,CC-IT-500

@@ -1,0 +1,6 @@
+system_id,system_name,environment,system_type,criticality
+SYS01,PRD-ECC,Production,ERP Central Component,Tier 1
+SYS02,S4H-CORE,Production,S/4HANA Enterprise,Tier 1
+SYS03,BW-PRD,Production,Business Warehouse,Tier 2
+SYS04,GRC-AC,Production,Governance Risk & Compliance,Tier 1
+SYS05,QAS-ECC,Quality,ERP QA Testing,Tier 3

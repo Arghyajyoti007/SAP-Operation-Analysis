@@ -1,0 +1,6 @@
+priority_id,priority_name,sla_target_hours,description
+P1,P1 - Critical,4,Production down / Firefighter emergency
+P2,P2 - High,12,Critical security incident / Executive lock
+P3,P3 - Medium,24,Standard business hours operational incident
+P4,P4 - Low,120,Low severity incident (5 business days = 120 hrs)
+SR14,Standard SR,336,Service Request standard catalog SLA (14 days = 336 hrs)

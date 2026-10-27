@@ -1,0 +1,9 @@
+ticket_type_id,ticket_classification,request_subtype,category,default_priority
+TT01,Service Request,SAP ID Creation,Provisioning,P4
+TT02,Service Request,SAP ID Deletion,De-Provisioning,P4
+TT03,Service Request,Role Assignment,Access Modification,P4
+TT04,Service Request,Access Extension,Lifecycle Maintenance,P4
+TT05,Incident,User Unlock & Password Reset,Operational Incident,P3
+TT06,Incident,Firefighter / EAM Emergency Access,Privileged Access Incident,P1
+TT07,Incident,Authorization Failure (SU53),Operational Incident,P3
+TT08,Incident,Critical Role Revocation,Security Incident,P2
