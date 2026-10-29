@@ -5,7 +5,7 @@ o	Total Task Cancelled = calculate(countrows(‘fact_operational_request’[Requ
 o	Active Open Backlog = CALCULATE(COUNTROWS('fact_operational_request'),'fact_operational_request'[Request_Status] IN { "Assigned", "Work In Progress", "Pending User Info" })
 o	Monthly Target Achievement % = DIVIDE([Closed Tasks Throughput],800,0)
 o	Monthly Target Variance = [Closed Tasks Throughput]-800
-o	Net Queue Delta = [Total Request Ingested]-[Closed Tasks Throughput]-[Cancelled Tasks Count]
+o	Net Queue Delta = [Total Request Ingested]-[Closed Tasks Throughput]-[Cancelled Tasks Count]    
 
 Folder 02: SLA & Compliance
 SLA Eligible Closed Tasks = CALCULATE(COUNTROWS(fact_operational_request), AND(fact_operational_request[Request_Status]="Closed Complete", fact_operational_request[SLA_Eligiblity]=1))
