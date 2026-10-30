@@ -43,17 +43,20 @@ Avg Closure Lag Hours = AVERAGE(fact_operational_request[Closure_Lag_Hours])
 ## Folder 04: Backlog & Aging   
 ```Code snippet
 Current Open Age Days = 
-VAR Current_Date = today()
+-- Production alternative: VAR RefDate = TODAY()
+VAR RefDate = DATE(2026, 1, 15)
 RETURN
 AVERAGEX(
     FILTER(
-        fact_operational_request, fact_operational_request[Request_Status] IN { "Assigned", "Work In Progress", "Pending User Info" }
+        'fact_operational_request',
+        'fact_operational_request'[Request_Status] IN { "Assigned", "Work In Progress", "Pending User Info" }
     ),
-    DATEDIFF(fact_operational_request[Request_Created_Datetime], Current_Date,DAY)
+    DATEDIFF('fact_operational_request'[Request_Created_Datetime], RefDate, DAY)
 )
 
 Open Aging > 3 Days = 
-VAR Current_Date = TODAY()
+-- Production alternative: VAR Current_Date = TODAY()
+VAR Current_Date = DATE(2026, 1, 15)
 RETURN
 CALCULATE(
     COUNTROWS(fact_operational_request), 
