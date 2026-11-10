@@ -1,5 +1,5 @@
 # DAX (Data Analysis Expression)
-
+  
 ## Folder 01: Throughput & Workload
 ```Code snippet
 Total Task Created = countrows(fact_operational_request)
