@@ -1,4 +1,4 @@
-# DAX (Data Analysis Expression)
+# DAX (Data Analysis Expression)   
   
 ## Folder 01: Throughput & Workload
 ```Code snippet
