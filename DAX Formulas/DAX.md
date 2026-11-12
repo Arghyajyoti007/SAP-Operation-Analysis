@@ -3,13 +3,23 @@
 ## Folder 01: Throughput & Workload
 ```Code snippet
 Total Task Created = countrows(fact_operational_request)
+
 Total Task Closed = calculate(countrows(fact_operational_request), fact_operational_request[Request_Status] = "Closed Complete")
+
 Total Task Cancelled = calculate(countrows(fact_operational_request), fact_operational_request[Request_Status] = "Cancelled")
+
 Active Open Backlog = CALCULATE(COUNTROWS('fact_operational_request'),'fact_operational_request'[Request_Status] IN { "Assigned", "Work In Progress", "Pending User Info" })
-Monthly Target Achievement % = DIVIDE([Closed Tasks Throughput],800,0)
-Monthly Target Variance = [Closed Tasks Throughput]-800
+
+Monthly Target Achievement % = 
+DIVIDE([Closed Tasks Throughput], 1500, 0)
+
+Monthly Target Variance = 
+[Closed Tasks Throughput] - 1500
+
 Net Queue Delta = [Total Request Ingested]-[Closed Tasks Throughput]-[Cancelled Tasks Count]
+
 ```
+
 ## Folder 02: SLA & Compliance   
 ```Code snippet
 SLA Eligible Closed Tasks = CALCULATE(COUNTROWS(fact_operational_request), AND(fact_operational_request[Request_Status]="Closed Complete", fact_operational_request[SLA_Eligiblity]=1))
@@ -28,16 +38,29 @@ IF(
     NOT ISBLANK(Current_Month_SLA) && NOT ISBLANK(Prior_Month_SLA), 
     Current_Month_SLA-Prior_Month_SLA
 )
+
 ```
 
 ## Folder 03: Cycle Time & Bottlenecks   
 ```Code snippet
 Avg Total Resolution Days = CALCULATE(AVERAGE(fact_operational_request[Total_Resolution_Days]), fact_operational_request[Request_Status]="Closed Complete")
+
 Avg Queue Wait Hours = AVERAGE(fact_operational_request[Queue_Wait_Hours])
+
 Avg User Info Wait Days = AVERAGE(fact_operational_request[User_Info_Wait_Days])
+
+Avg User Info Wait Days (When Delayed) = CALCULATE(AVERAGE(fact_operational_request[User_Info_Wait_Days]), fact_operational_request[User_Info_Wait_Days]>0)
+
+Avg User Info Wait Hours = AVERAGE('fact_operational_request'[User_Info_Wait_Days]) * 24
+
 Avg GRC Approval Wait Days = AVERAGE(fact_operational_request[Grc_Approval_Wait_Days])
+
+Avg GRC Approval Wait Hours = AVERAGE('fact_operational_request'[Grc_Approval_Wait_Days]) * 24
+
 Avg Fulfilment Hours = AVERAGE(fact_operational_request[Fulfilment_Hours])
+
 Avg Closure Lag Hours = AVERAGE(fact_operational_request[Closure_Lag_Hours])
+
 ```
 
 ## Folder 04: Backlog & Aging   
@@ -78,4 +101,15 @@ VAR AllMembersRequests =
     )
 RETURN
     DIVIDE(CurrentMemberRequests, AllMembersRequests, 0)
+```
+
+## Newly Added
+```
+Breach Rate % = DIVIDE([SLA Breached Tasks],[SLA Eligible Closed Tasks],0)
+
+Cancelled Tasks Count = CALCULATE(COUNTROWS(fact_operational_request), fact_operational_request[Request_Status]="Canceled")
+
+Closed Tasks Throughput = CALCULATE(COUNTROWS(fact_operational_request), fact_operational_request[Request_Status]="Closed Complete")
+
+
 ```
