@@ -11,10 +11,11 @@ bottlenecks, and team workload capacity.
 > data.
 
 # Dashboard
-<img width="1861" height="817" alt="Page 1" src="https://github.com/user-attachments/assets/9a7c4050-6914-4952-a4b2-99ceb8ca3309" />
-<img width="1867" height="809" alt="Page 2" src="https://github.com/user-attachments/assets/b08118a3-6d11-4f21-8169-214a7e340e13" />
-<img width="1874" height="815" alt="Page 3" src="https://github.com/user-attachments/assets/09b9afa6-5a6c-4c46-85e5-a57098179c8a" />
-<img width="1863" height="794" alt="Page 4" src="https://github.com/user-attachments/assets/88a742f6-ebf4-49c2-bc2a-0c4e73916f63" />
+<img width="1861" height="817" alt="Page 1" src="https://github.com/user-attachments/assets/889aa7fe-51f8-4a2d-bd39-3635d218814b" />
+<img width="1867" height="809" alt="Page 2" src="https://github.com/user-attachments/assets/463a596f-dac8-4b59-b60e-16cbceceb5b0" />
+<img width="1874" height="815" alt="Page 3" src="https://github.com/user-attachments/assets/de37ad39-8379-4ae6-aed4-884c07accaed" />
+<img width="1863" height="794" alt="Page 4" src="https://github.com/user-attachments/assets/e2f4ed59-7363-4e9f-ba7e-f1b77acddb7d" />
+
 
 
 ------------------------------------------------------------------------
@@ -30,6 +31,7 @@ bottlenecks, and team workload capacity.
 -   [Key Operational Findings](#key-operational-findings)
 -   [Repository Structure](#repository-structure)
 -   [Tech Stack](#tech-stack)
+-   [Further Reading](#further-reading)
 
 ------------------------------------------------------------------------
 
@@ -409,28 +411,42 @@ requests.
 
 ## Repository Structure
 
-``` text
+The repository is organized into four main resource folders, with the project README at the root.
+
+```text
 SAP-Operation-Analysis/
-├── notebooks/
-│   ├── 01_bronze_to_silver_cleaning.ipynb
-│   │   # PySpark cleaning, deduplication, and validation
-│   └── 02_silver_to_gold_star_schema.ipynb
-│       # Fact/dimension modeling and aging buckets
-├── powerbi/
-│   ├── SAP_GRC_Enterprise_Theme.json
-│   │   # Custom JSON report theme
-│   └── dax_measures_reference.md
-│       # DAX measures organized across five display folders
-├── screenshots/
-│   ├── page1_executive_overview.png
-│   ├── page2_sla_bottlenecks.png
-│   ├── page3_team_capacity_backlog.png
-│   └── page4_audit_drillthrough.png
+├── Assets/
+│   ├── Data Modelling.PNG
+│   ├── Medellion Architecture.PNG
+│   ├── Page 1.PNG
+│   ├── Page 2.PNG
+│   ├── Page 3.png
+│   ├── Page 4.PNG
+│   ├── Pipeline.PNG
+│   └── Semantic Model.PNG
+├── DAX Formulas/
+│   └── DAX.md
+├── Notebooks/
+│   ├── nb_Gold_Data_Preparation.ipynb
+│   └── nb_Silver_Data_Cleaning.ipynb
+├── Raw Dataset/
+│   ├── dim_business_unit.csv
+│   ├── dim_date.csv
+│   ├── dim_priority.csv
+│   ├── dim_system.csv
+│   ├── dim_team_member.csv
+│   ├── dim_ticket_type.csv
+│   └── raw_access_request.csv
 └── README.md
 ```
 
-------------------------------------------------------------------------
+### Folder Contents
 
+- **`Assets/`** — Architecture, pipeline, data-model, semantic-model, and Power BI report-page screenshots.
+- **`DAX Formulas/`** — `DAX.md`, containing the project's DAX measures and formulas.
+- **`Notebooks/`** — Silver-layer data cleaning and Gold-layer data preparation notebooks.
+- **`Raw Dataset/`** — Synthetic source request data and supporting dimension CSV files.
+- **`README.md`** — Main project documentation and implementation overview.
 ## Tech Stack
 
   -----------------------------------------------------------------------
@@ -453,3 +469,11 @@ SAP-Operation-Analysis/
 
 ------------------------------------------------------------------------
 
+## Further Reading
+
+-   [Microsoft Fabric medallion lakehouse
+    architecture](https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture)
+-   [Direct Lake
+    overview](https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview)
+-   [How Direct Lake
+    works](https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-how-it-works)
