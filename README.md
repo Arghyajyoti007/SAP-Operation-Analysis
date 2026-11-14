@@ -10,6 +10,13 @@ bottlenecks, and team workload capacity.
 > operational workflows without exposing proprietary organizational
 > data.
 
+# Dashboard
+<img width="1861" height="817" alt="Page 1" src="https://github.com/user-attachments/assets/9a7c4050-6914-4952-a4b2-99ceb8ca3309" />
+<img width="1867" height="809" alt="Page 2" src="https://github.com/user-attachments/assets/b08118a3-6d11-4f21-8169-214a7e340e13" />
+<img width="1874" height="815" alt="Page 3" src="https://github.com/user-attachments/assets/09b9afa6-5a6c-4c46-85e5-a57098179c8a" />
+<img width="1863" height="794" alt="Page 4" src="https://github.com/user-attachments/assets/88a742f6-ebf4-49c2-bc2a-0c4e73916f63" />
+
+
 ------------------------------------------------------------------------
 
 ## Table of Contents
