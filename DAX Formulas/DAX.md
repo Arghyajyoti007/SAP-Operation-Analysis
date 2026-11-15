@@ -1,6 +1,6 @@
 # DAX (Data Analysis Expressions) Reference
 
-All measures are stored inside the dedicated `_Measures` table and organized into five operational display folders.
+All measures are stored inside the dedicated `_Measures` table and organized into five operational display folders. 
 
 ---
 
