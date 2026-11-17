@@ -1,4 +1,4 @@
-# SAP GRC & IAM Operational Analytics (Microsoft Fabric & Power BI)
+# SAP GRC & IAM Operational Analytics (Microsoft Fabric & Power BI)   
 
 An end-to-end operational analytics solution built on **Microsoft
 Fabric** and **Power BI** to monitor SAP GRC / Identity & Access
